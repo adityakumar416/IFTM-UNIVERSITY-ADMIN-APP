@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nev"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/addCourseFragment"
+        android:name="com.example.iftmadmin.AddCourseFragment"
+        android:label="fragment_add_course"
+        tools:layout="@layout/fragment_add_course" />
+    <fragment
+        android:id="@+id/viewAllCoursesFragment"
+        android:name="com.example.iftmadmin.ViewAllCoursesFragment"
+        android:label="fragment_view_all_courses"
+        tools:layout="@layout/fragment_view_all_courses" />
+    <fragment
+        android:id="@+id/addBannerFragment"
+        android:name="com.example.iftmadmin.AddBannerFragment"
+        android:label="fragment_add_banner"
+        tools:layout="@layout/fragment_add_banner" />
+    <fragment
+        android:id="@+id/viewAllBannerFragment"
+        android:name="com.example.iftmadmin.ViewAllBannerFragment"
+        android:label="fragment_view_all_banner"
+        tools:layout="@layout/fragment_view_all_banner" />
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.iftmadmin.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_addBannerFragment"
+            app:destination="@id/addBannerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewAllBannerFragment"
+            app:destination="@id/viewAllBannerFragment" />
+    </fragment>
+</navigation>

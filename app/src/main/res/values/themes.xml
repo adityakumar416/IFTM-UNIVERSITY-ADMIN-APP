@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.IFTMAdmin" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/Victoria</item>
+        <item name="colorPrimaryVariant">@color/Victoria</item>
+        <item name="colorOnPrimary">@color/Victoria</item>
+        <item name="android:statusBarColor">@color/Victoria</item>
+        
+    </style>
+
+    <style name="Theme.IFTMAdmin" parent="Base.Theme.IFTMAdmin" />
+</resources>
