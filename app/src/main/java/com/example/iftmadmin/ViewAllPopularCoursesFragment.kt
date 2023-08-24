@@ -10,37 +10,38 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.iftmadmin.databinding.FragmentViewAllBannerBinding
+import com.example.iftmadmin.databinding.FragmentViewAllCoursesBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class ViewAllBannerFragment : Fragment() {
-  private lateinit var binding: FragmentViewAllBannerBinding
-    private lateinit var imageList: ArrayList<BannerModel>
+
+class ViewAllPopularCoursesFragment : Fragment() {
+    private lateinit var binding: FragmentViewAllCoursesBinding
+    private lateinit var courseList: ArrayList<CourseModel>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentViewAllBannerBinding.inflate(layoutInflater, container, false)
+        binding = FragmentViewAllCoursesBinding.inflate(layoutInflater, container, false)
 
 
         binding.recyclerview.layoutManager = LinearLayoutManager(context)
-        imageList = arrayListOf()
+        courseList = arrayListOf()
 
-        val databaseReference = FirebaseDatabase.getInstance().getReference("banners")
+        val databaseReference = FirebaseDatabase.getInstance().getReference("popularCourses")
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                imageList.clear()
+                courseList.clear()
                 Log.i(ContentValues.TAG, "User Image $snapshot")
                 for (dataSnapshot in snapshot.children) {
 
-                    val image: BannerModel? = dataSnapshot.getValue(BannerModel::class.java)
-                    if (image != null) {
-                        imageList.add(image)
+                    val courseModel: CourseModel? = dataSnapshot.getValue(CourseModel::class.java)
+                    if (courseModel != null) {
+                        courseList.add(courseModel)
                     }
 
                 }
@@ -49,7 +50,7 @@ class ViewAllBannerFragment : Fragment() {
                 binding.recyclerview.layoutManager = LinearLayoutManager(context,
                     RecyclerView.VERTICAL,false)
 
-                binding.recyclerview.adapter = ShowBannerAdapter(imageList, context)
+                binding.recyclerview.adapter = ShowCoursesAdapter(courseList,context)
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -58,6 +59,8 @@ class ViewAllBannerFragment : Fragment() {
 
 
         })
+
+
 
 
         return binding.root

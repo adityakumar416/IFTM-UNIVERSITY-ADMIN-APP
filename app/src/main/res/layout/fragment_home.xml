@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#f8f8f8"
-    tools:context=".MainActivity">
+    android:background="#f8f8f8">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/db_design"
@@ -23,13 +24,17 @@
         android:text="DashBoard"
         android:textColor="@color/white"
         android:textSize="35dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="10dp"
+        android:scrollbars="none">
 
     <androidx.appcompat.widget.LinearLayoutCompat
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
 
         android:gravity="center"
         android:orientation="vertical"
@@ -43,7 +48,7 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/add_flower"
+                android:id="@+id/add_course"
                 android:layout_width="160dp"
                 android:layout_height="190dp"
                 android:layout_marginRight="5dp"
@@ -91,7 +96,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/view_all_flower"
+                android:id="@+id/view_all_courses"
                 android:layout_width="160dp"
                 android:layout_height="190dp"
                 android:layout_marginLeft="5dp"
@@ -118,6 +123,112 @@
                         android:layout_height="wrap_content"
                         android:text="View All Courses"
                         android:textSize="15sp"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/lightgray" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="View All Courses And Remove"
+                        android:textColor="@android:color/darker_gray" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/add_popular_course"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+
+                        android:padding="10dp"
+                        android:src="@drawable/ic_add" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Popular Courses"
+                        android:textSize="15sp"
+
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/lightgray" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Add Courses"
+                        android:textColor="@android:color/darker_gray" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/view_all_popular_courses"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+
+                        android:padding="10dp"
+                        android:src="@drawable/gallery_icon" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View All Popular Courses"
+                        android:textSize="15sp"
+                        android:gravity="center"
                         android:textStyle="bold" />
 
                     <View
@@ -347,4 +458,6 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
 </RelativeLayout>

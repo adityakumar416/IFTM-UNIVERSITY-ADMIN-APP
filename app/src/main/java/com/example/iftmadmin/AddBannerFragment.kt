@@ -77,7 +77,7 @@ class AddBannerFragment : Fragment() {
                         val downloadUrl:Uri = urlTask.result
                         Log.i(TAG, "onSuccess: $downloadUrl")
 
-                        val imageModel =ImageModel(databaseRef.push().key,downloadUrl.toString())
+                        val imageModel =BannerModel(databaseRef.push().key,downloadUrl.toString())
                         val uploadId =imageModel.imageId
 
                         if (uploadId != null) {

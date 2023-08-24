@@ -24,7 +24,18 @@ private lateinit var binding: FragmentHomeBinding
         binding.viewAllBanner.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_viewAllBannerFragment)
         }
-
+        binding.addPopularCourse.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_addPopularCourseFragment)
+        }
+        binding.viewAllPopularCourses.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_viewAllPopularCoursesFragment)
+        }
+        binding.addCourse.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_addCoursesFragment)
+        }
+        binding.viewAllCourses.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_viewAllCoursesFragment)
+        }
 
 
         return binding.root

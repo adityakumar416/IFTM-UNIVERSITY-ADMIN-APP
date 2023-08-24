@@ -1,6 +1,6 @@
 package com.example.iftmadmin
 
-data class ImageModel (
+data class BannerModel (
         val imageId:String?=null,
         val url:String? = null
 ) {

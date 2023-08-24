@@ -6,15 +6,15 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/addCourseFragment"
-        android:name="com.example.iftmadmin.AddCourseFragment"
+        android:id="@+id/addPopularCourseFragment"
+        android:name="com.example.iftmadmin.AddPopularCourseFragment"
         android:label="fragment_add_course"
-        tools:layout="@layout/fragment_add_course" />
+        tools:layout="@layout/fragment_add_popular_course" />
     <fragment
-        android:id="@+id/viewAllCoursesFragment"
-        android:name="com.example.iftmadmin.ViewAllCoursesFragment"
+        android:id="@+id/viewAllPopularCoursesFragment"
+        android:name="com.example.iftmadmin.ViewAllPopularCoursesFragment"
         android:label="fragment_view_all_courses"
-        tools:layout="@layout/fragment_view_all_courses" />
+        tools:layout="@layout/fragment_view_all_popular_courses" />
     <fragment
         android:id="@+id/addBannerFragment"
         android:name="com.example.iftmadmin.AddBannerFragment"
@@ -37,5 +37,27 @@
         <action
             android:id="@+id/action_homeFragment_to_viewAllBannerFragment"
             app:destination="@id/viewAllBannerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addPopularCourseFragment"
+            app:destination="@id/addPopularCourseFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewAllPopularCoursesFragment"
+            app:destination="@id/viewAllPopularCoursesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addCoursesFragment"
+            app:destination="@id/addCoursesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewAllCoursesFragment"
+            app:destination="@id/viewAllCoursesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/addCoursesFragment"
+        android:name="com.example.iftmadmin.AddCoursesFragment"
+        android:label="fragment_add_courses"
+        tools:layout="@layout/fragment_add_courses" />
+    <fragment
+        android:id="@+id/viewAllCoursesFragment"
+        android:name="com.example.iftmadmin.ViewAllCoursesFragment"
+        android:label="fragment_view_all_courses"
+        tools:layout="@layout/fragment_view_all_courses" />
 </navigation>

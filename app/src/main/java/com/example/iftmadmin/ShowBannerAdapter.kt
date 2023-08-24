@@ -8,7 +8,6 @@ import android.view.View.OnLongClickListener
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
@@ -17,10 +16,10 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 
-class ShowImageAdapter(
-    private val imageList: ArrayList<ImageModel>,
+class ShowBannerAdapter(
+    private val imageList: ArrayList<BannerModel>,
     private val context: Context? = null
-): RecyclerView.Adapter<ShowImageAdapter.ViewHolder>() {
+): RecyclerView.Adapter<ShowBannerAdapter.ViewHolder>() {
 
     class ViewHolder(view: View):RecyclerView.ViewHolder(view){
 
@@ -34,7 +33,7 @@ class ShowImageAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            val imageModel:ImageModel = imageList[position]
+            val imageModel:BannerModel = imageList[position]
 
 
 
@@ -57,7 +56,7 @@ class ShowImageAdapter(
 
     }
 
-    private fun showDialog(imageModel: ImageModel) {
+    private fun showDialog(imageModel: BannerModel) {
         val firebaseStorage = FirebaseStorage.getInstance().getReference("banners")
         val databaseRef = FirebaseDatabase.getInstance().getReference("banners")
 
