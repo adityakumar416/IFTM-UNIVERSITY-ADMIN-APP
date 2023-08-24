@@ -1,4 +1,4 @@
-package com.example.iftmadmin
+package com.example.iftmadmin.fragment.courses
 
 import android.content.ContentValues
 import android.os.Bundle
@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 
-class ViewAllPopularCoursesFragment : Fragment() {
+class ViewAllCoursesFragment : Fragment() {
     private lateinit var binding: FragmentViewAllCoursesBinding
     private lateinit var courseList: ArrayList<CourseModel>
 
@@ -32,7 +32,7 @@ class ViewAllPopularCoursesFragment : Fragment() {
         binding.recyclerview.layoutManager = LinearLayoutManager(context)
         courseList = arrayListOf()
 
-        val databaseReference = FirebaseDatabase.getInstance().getReference("popularCourses")
+        val databaseReference = FirebaseDatabase.getInstance().getReference("courses")
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 courseList.clear()

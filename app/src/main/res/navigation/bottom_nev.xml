@@ -7,28 +7,28 @@
 
     <fragment
         android:id="@+id/addPopularCourseFragment"
-        android:name="com.example.iftmadmin.AddPopularCourseFragment"
+        android:name="com.example.iftmadmin.fragment.popularCourses.AddPopularCourseFragment"
         android:label="fragment_add_course"
         tools:layout="@layout/fragment_add_popular_course" />
     <fragment
         android:id="@+id/viewAllPopularCoursesFragment"
-        android:name="com.example.iftmadmin.ViewAllPopularCoursesFragment"
+        android:name="com.example.iftmadmin.fragment.popularCourses.ViewAllPopularCoursesFragment"
         android:label="fragment_view_all_courses"
         tools:layout="@layout/fragment_view_all_popular_courses" />
     <fragment
         android:id="@+id/addBannerFragment"
-        android:name="com.example.iftmadmin.AddBannerFragment"
+        android:name="com.example.iftmadmin.fragment.banner.AddBannerFragment"
         android:label="fragment_add_banner"
         tools:layout="@layout/fragment_add_banner" />
     <fragment
         android:id="@+id/viewAllBannerFragment"
-        android:name="com.example.iftmadmin.ViewAllBannerFragment"
+        android:name="com.example.iftmadmin.fragment.banner.ViewAllBannerFragment"
         android:label="fragment_view_all_banner"
         tools:layout="@layout/fragment_view_all_banner" />
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.iftmadmin.HomeFragment"
+        android:name="com.example.iftmadmin.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -49,15 +49,68 @@
         <action
             android:id="@+id/action_homeFragment_to_viewAllCoursesFragment"
             app:destination="@id/viewAllCoursesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addQuizFragment"
+            app:destination="@id/addQuizFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewAllQuizFragment"
+            app:destination="@id/viewAllQuizFragment" />
     </fragment>
     <fragment
         android:id="@+id/addCoursesFragment"
-        android:name="com.example.iftmadmin.AddCoursesFragment"
+        android:name="com.example.iftmadmin.fragment.courses.AddCoursesFragment"
         android:label="fragment_add_courses"
         tools:layout="@layout/fragment_add_courses" />
     <fragment
         android:id="@+id/viewAllCoursesFragment"
-        android:name="com.example.iftmadmin.ViewAllCoursesFragment"
+        android:name="com.example.iftmadmin.fragment.courses.ViewAllCoursesFragment"
         android:label="fragment_view_all_courses"
         tools:layout="@layout/fragment_view_all_courses" />
+    <fragment
+        android:id="@+id/addQuizFragment"
+        android:name="com.example.iftmadmin.fragment.quiz.AddQuizFragment"
+        android:label="fragment_add_quiz"
+        tools:layout="@layout/fragment_add_quiz" >
+        <action
+            android:id="@+id/action_addQuizFragment_to_basicComputerQuizFragment"
+            app:destination="@id/basicComputerQuizFragment" />
+        <action
+            android:id="@+id/action_addQuizFragment_to_androidQuizFragment"
+            app:destination="@id/androidQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewAllQuizFragment"
+        android:name="com.example.iftmadmin.fragment.quiz.ViewAllQuizFragment"
+        android:label="fragment_view_all_quiz"
+        tools:layout="@layout/fragment_view_all_quiz" >
+        <action
+            android:id="@+id/action_viewAllQuizFragment_self"
+            app:destination="@id/viewAllQuizFragment" />
+        <action
+            android:id="@+id/action_viewAllQuizFragment_to_basicComputerViewAllQuizFragment"
+            app:destination="@id/basicComputerViewAllQuizFragment" />
+        <action
+            android:id="@+id/action_viewAllQuizFragment_to_viewAllAndroidQuizFragment"
+            app:destination="@id/viewAllAndroidQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/basicComputerQuizFragment"
+        android:name="com.example.iftmadmin.fragment.quiz.basicComputerQuiz.BasicComputerQuizFragment"
+        android:label="fragment_basic_computer_quiz"
+        tools:layout="@layout/fragment_basic_computer_quiz" />
+    <fragment
+        android:id="@+id/basicComputerViewAllQuizFragment"
+        android:name="com.example.iftmadmin.fragment.quiz.basicComputerQuiz.BasicComputerViewAllQuizFragment"
+        android:label="fragment_basic_computer_view_all_quiz"
+        tools:layout="@layout/fragment_basic_computer_view_all_quiz" />
+    <fragment
+        android:id="@+id/androidQuizFragment"
+        android:name="com.example.iftmadmin.fragment.quiz.androidQuiz.AndroidQuizFragment"
+        android:label="fragment_android_quiz"
+        tools:layout="@layout/fragment_android_quiz" />
+    <fragment
+        android:id="@+id/viewAllAndroidQuizFragment"
+        android:name="com.example.iftmadmin.fragment.quiz.androidQuiz.ViewAllAndroidQuizFragment"
+        android:label="fragment_view_all_android_quiz"
+        tools:layout="@layout/fragment_view_all_android_quiz" />
 </navigation>

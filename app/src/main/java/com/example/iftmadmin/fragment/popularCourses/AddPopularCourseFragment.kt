@@ -1,4 +1,4 @@
-package com.example.iftmadmin
+package com.example.iftmadmin.fragment.popularCourses
 
 import android.app.Activity
 import android.app.ProgressDialog
@@ -16,6 +16,7 @@ import android.webkit.MimeTypeMap
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.iftmadmin.databinding.FragmentAddPopularCourseBinding
+import com.example.iftmadmin.fragment.courses.CourseModel
 import com.google.android.gms.tasks.Task
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage

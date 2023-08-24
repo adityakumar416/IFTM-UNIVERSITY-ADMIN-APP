@@ -1,4 +1,4 @@
-package com.example.iftmadmin
+package com.example.iftmadmin.fragment.banner
 
 import android.content.Context
 import android.content.DialogInterface
@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.iftmadmin.R
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -33,7 +34,7 @@ class ShowBannerAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            val imageModel:BannerModel = imageList[position]
+            val imageModel: BannerModel = imageList[position]
 
 
 

@@ -1,4 +1,4 @@
-package com.example.iftmadmin
+package com.example.iftmadmin.fragment.quiz.basicComputerQuiz
 
 import android.content.ContentValues
 import android.os.Bundle
@@ -10,37 +10,37 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.iftmadmin.databinding.FragmentViewAllBannerBinding
+import com.example.iftmadmin.databinding.FragmentBasicComputerViewAllQuizBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class ViewAllBannerFragment : Fragment() {
-  private lateinit var binding: FragmentViewAllBannerBinding
-    private lateinit var imageList: ArrayList<BannerModel>
+class BasicComputerViewAllQuizFragment : Fragment() {
+    private lateinit var binding: FragmentBasicComputerViewAllQuizBinding
+    private lateinit var basicComputerQuestionList: ArrayList<BasicComputerQuizModel>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentViewAllBannerBinding.inflate(layoutInflater, container, false)
-
+        binding = FragmentBasicComputerViewAllQuizBinding.inflate(layoutInflater, container, false)
 
         binding.recyclerview.layoutManager = LinearLayoutManager(context)
-        imageList = arrayListOf()
+        basicComputerQuestionList = arrayListOf()
 
-        val databaseReference = FirebaseDatabase.getInstance().getReference("banners")
+        val databaseReference = FirebaseDatabase.getInstance().getReference("basicComputerQuiz")
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                imageList.clear()
+                basicComputerQuestionList.clear()
                 Log.i(ContentValues.TAG, "User Image $snapshot")
                 for (dataSnapshot in snapshot.children) {
 
-                    val image: BannerModel? = dataSnapshot.getValue(BannerModel::class.java)
-                    if (image != null) {
-                        imageList.add(image)
+                    val basicComputerQuizModel: BasicComputerQuizModel? = dataSnapshot.getValue(
+                        BasicComputerQuizModel::class.java)
+                    if (basicComputerQuizModel != null) {
+                        basicComputerQuestionList.add(basicComputerQuizModel)
                     }
 
                 }
@@ -49,7 +49,7 @@ class ViewAllBannerFragment : Fragment() {
                 binding.recyclerview.layoutManager = LinearLayoutManager(context,
                     RecyclerView.VERTICAL,false)
 
-                binding.recyclerview.adapter = ShowBannerAdapter(imageList, context)
+                binding.recyclerview.adapter = ShowBasicComputerQuizAdapter(basicComputerQuestionList,context)
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -60,7 +60,9 @@ class ViewAllBannerFragment : Fragment() {
         })
 
 
+
         return binding.root
     }
+
 
 }
