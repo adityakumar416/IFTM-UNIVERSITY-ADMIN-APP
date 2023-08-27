@@ -1,4 +1,4 @@
-package com.example.iftmadmin.fragment.courses
+package com.example.iftmadmin.fragment.popularCourses
 
 import android.content.Context
 import android.content.DialogInterface
@@ -11,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.iftmadmin.R
+import com.example.iftmadmin.fragment.courses.CourseModel
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -20,10 +21,10 @@ import com.squareup.picasso.Picasso
 import kotlin.Int
 import kotlin.toString
 
-class ShowCoursesAdapter(
+class ShowAllPopularCoursesAdapter(
     private val courseList: ArrayList<CourseModel>,
     private val context: Context?=null
-): RecyclerView.Adapter<ShowCoursesAdapter.ViewHolder>() {
+): RecyclerView.Adapter<ShowAllPopularCoursesAdapter.ViewHolder>() {
 
     class ViewHolder(view: View):RecyclerView.ViewHolder(view){
 
@@ -71,8 +72,8 @@ class ShowCoursesAdapter(
     }
 
     private fun showDialog(courseModel: CourseModel) {
-        val firebaseStorage = FirebaseStorage.getInstance().getReference("courses")
-        val databaseRef = FirebaseDatabase.getInstance().getReference("courses")
+        val firebaseStorage = FirebaseStorage.getInstance().getReference("popularCourses")
+        val databaseRef = FirebaseDatabase.getInstance().getReference("popularCourses")
 
         if (context != null) {
             MaterialAlertDialogBuilder(context)

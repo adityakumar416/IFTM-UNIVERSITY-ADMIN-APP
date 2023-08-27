@@ -52,7 +52,7 @@ class ViewAllPopularCoursesFragment : Fragment() {
                 binding.recyclerview.layoutManager = LinearLayoutManager(context,
                     RecyclerView.VERTICAL,false)
 
-                binding.recyclerview.adapter = ShowCoursesAdapter(courseList,context)
+                binding.recyclerview.adapter = ShowAllPopularCoursesAdapter(courseList,context)
             }
 
             override fun onCancelled(error: DatabaseError) {
