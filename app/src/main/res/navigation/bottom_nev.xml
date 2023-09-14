@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/addPopularCourseFragment"
-        android:name="com.example.iftmadmin.fragment.popularCourses.AddPopularCourseFragment"
+        android:name="com.example.iftmadmin.fragment.popularStreams.AddPopularCourseFragment"
         android:label="fragment_add_course"
         tools:layout="@layout/fragment_add_popular_course" />
     <fragment
         android:id="@+id/viewAllPopularCoursesFragment"
-        android:name="com.example.iftmadmin.fragment.popularCourses.ViewAllPopularCoursesFragment"
+        android:name="com.example.iftmadmin.fragment.popularStreams.ViewAllPopularCoursesFragment"
         android:label="fragment_view_all_courses"
         tools:layout="@layout/fragment_view_all_popular_courses" />
     <fragment
@@ -55,6 +55,9 @@
         <action
             android:id="@+id/action_homeFragment_to_viewAllQuizFragment"
             app:destination="@id/viewAllQuizFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewAllUserComplaintFragment"
+            app:destination="@id/viewAllUserComplaintFragment" />
     </fragment>
     <fragment
         android:id="@+id/addCoursesFragment"
@@ -113,4 +116,25 @@
         android:name="com.example.iftmadmin.fragment.quiz.androidQuiz.ViewAllAndroidQuizFragment"
         android:label="fragment_view_all_android_quiz"
         tools:layout="@layout/fragment_view_all_android_quiz" />
+    <fragment
+        android:id="@+id/viewAllUserComplaintFragment"
+        android:name="com.example.iftmadmin.ViewAllUserComplaintFragment"
+        android:label="fragment_view_all_user_complaint"
+        tools:layout="@layout/fragment_view_all_user_complaint" >
+        <action
+            android:id="@+id/action_viewAllUserComplaintFragment_to_showFullImageFragment"
+            app:destination="@id/showFullImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showFullImageFragment"
+        android:name="com.example.iftmadmin.fragment.ShowFullImageFragment"
+        android:label="fragment_show_full_image"
+        tools:layout="@layout/fragment_show_full_image" >
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.iftmadmin.ShowAllComplaintModel" />
+        <action
+            android:id="@+id/action_showFullImageFragment_to_viewAllUserComplaintFragment"
+            app:destination="@id/viewAllUserComplaintFragment" />
+    </fragment>
 </navigation>

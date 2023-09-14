@@ -64,47 +64,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:layout_weight="1"
-                    android:hint="Course Duration"
-                    app:boxBackgroundColor="@color/white">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/course_duration"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textWebEmailAddress"
-                        android:maxLength="40" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:hint="Course Fees"
-                app:boxBackgroundColor="@color/white">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/course_fees"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:maxLength="400"
-                    android:textAlignment="textStart" />
-
-            </com.google.android.material.textfield.TextInputLayout>
 
 
             <com.google.android.material.button.MaterialButton

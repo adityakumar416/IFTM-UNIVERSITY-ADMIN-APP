@@ -466,7 +466,7 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/order"
+                android:id="@+id/user_complaint"
                 android:layout_width="160dp"
                 android:layout_height="190dp"
                 android:layout_marginRight="5dp"
@@ -492,7 +492,7 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Order"
+                        android:text="User Complaint"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -507,7 +507,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="Check All Order"
+                        android:text="Check the All User Complaint"
                         android:textColor="@android:color/darker_gray" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>

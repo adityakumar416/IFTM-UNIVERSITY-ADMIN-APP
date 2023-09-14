@@ -1,4 +1,4 @@
-package com.example.iftmadmin.fragment.popularCourses
+package com.example.iftmadmin.fragment.popularStreams
 
 import android.content.ContentValues
 import android.os.Bundle
@@ -11,8 +11,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.iftmadmin.databinding.FragmentViewAllCoursesBinding
-import com.example.iftmadmin.fragment.courses.CourseModel
-import com.example.iftmadmin.fragment.courses.ShowCoursesAdapter
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -21,7 +19,7 @@ import com.google.firebase.database.ValueEventListener
 
 class ViewAllPopularCoursesFragment : Fragment() {
     private lateinit var binding: FragmentViewAllCoursesBinding
-    private lateinit var courseList: ArrayList<CourseModel>
+    private lateinit var streamCourseList: ArrayList<ShowAllPopularStreamsCourseModel>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,18 +30,18 @@ class ViewAllPopularCoursesFragment : Fragment() {
 
 
         binding.recyclerview.layoutManager = LinearLayoutManager(context)
-        courseList = arrayListOf()
+        streamCourseList = arrayListOf()
 
-        val databaseReference = FirebaseDatabase.getInstance().getReference("popularCourses")
+        val databaseReference = FirebaseDatabase.getInstance().getReference("popularStreams")
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                courseList.clear()
+                streamCourseList.clear()
                 Log.i(ContentValues.TAG, "User Image $snapshot")
                 for (dataSnapshot in snapshot.children) {
 
-                    val courseModel: CourseModel? = dataSnapshot.getValue(CourseModel::class.java)
-                    if (courseModel != null) {
-                        courseList.add(courseModel)
+                    val showAllPopularStreamsCourseModel: ShowAllPopularStreamsCourseModel? = dataSnapshot.getValue(ShowAllPopularStreamsCourseModel::class.java)
+                    if (showAllPopularStreamsCourseModel != null) {
+                        streamCourseList.add(showAllPopularStreamsCourseModel)
                     }
 
                 }
@@ -52,7 +50,7 @@ class ViewAllPopularCoursesFragment : Fragment() {
                 binding.recyclerview.layoutManager = LinearLayoutManager(context,
                     RecyclerView.VERTICAL,false)
 
-                binding.recyclerview.adapter = ShowAllPopularCoursesAdapter(courseList,context)
+                binding.recyclerview.adapter = ShowAllPopularCoursesAdapter(streamCourseList,context)
             }
 
             override fun onCancelled(error: DatabaseError) {

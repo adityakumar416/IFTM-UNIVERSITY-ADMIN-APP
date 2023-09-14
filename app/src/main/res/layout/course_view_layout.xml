@@ -28,36 +28,11 @@
             android:layout_height="wrap_content"
             android:text="Computer Science"
             android:textSize="16sp"
-            android:layout_marginTop="156dp"
+            android:layout_marginTop="160dp"
             android:id="@+id/course_name"
+            android:layout_marginBottom="14dp"
             android:fontFamily="@font/poppins_medium"
             android:layout_marginStart="22dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/course_duration"
-            android:text="  4 Years"
-            android:textSize="16sp"
-            android:fontFamily="@font/poppins_medium"
-            android:layout_marginTop="186sp"
-            android:layout_marginStart="22dp"
-            app:drawableStartCompat="@drawable/watch_icon" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/course_fees"
-            android:text="  1.20 Lac/year "
-            android:textSize="16sp"
-            android:fontFamily="@font/poppins_medium"
-            android:layout_marginTop="216sp"
-            android:layout_marginStart="22dp"
-            android:layout_marginBottom="12dp"
-            app:drawableStartCompat="@drawable/rupee_icon" />
-
-
-
 
 
     </com.google.android.material.card.MaterialCardView>

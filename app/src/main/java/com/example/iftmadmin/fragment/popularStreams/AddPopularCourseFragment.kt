@@ -1,4 +1,4 @@
-package com.example.iftmadmin.fragment.popularCourses
+package com.example.iftmadmin.fragment.popularStreams
 
 import android.app.Activity
 import android.app.ProgressDialog
@@ -35,8 +35,8 @@ class AddPopularCourseFragment : Fragment() {
         binding = FragmentAddPopularCourseBinding.inflate(layoutInflater, container, false)
 
 
-        val mStorageRef = FirebaseStorage.getInstance().getReference("popularCourses")
-        val mDatabaseRef = FirebaseDatabase.getInstance().getReference("popularCourses")
+        val mStorageRef = FirebaseStorage.getInstance().getReference("popularStreams")
+        val mDatabaseRef = FirebaseDatabase.getInstance().getReference("popularStreams")
 
         binding.btnImage.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
@@ -47,19 +47,19 @@ class AddPopularCourseFragment : Fragment() {
         binding.addCourse.setOnClickListener {
 
             val courseName =binding.courseName.text.toString()
-            val courseDuration =binding.courseDuration.text.toString()
-            val courseFees =binding.courseFees.text.toString()
+           /* val courseDuration =binding.courseDuration.text.toString()
+            val courseFees =binding.courseFees.text.toString()*/
 
-            if(courseName.isEmpty()||courseDuration.isEmpty()||courseFees.isEmpty()){
+            if(courseName.isEmpty()){
                 Toast.makeText(
                     context,
-                    "Please enter all fields.",
+                    "Please enter the Name.",
                     Toast.LENGTH_SHORT
                 ).show()
             }
             else {
 
-                addDataToFirebase(courseName, courseDuration, courseFees)
+                addDataToFirebase(courseName)
             }
 
 
@@ -70,14 +70,14 @@ class AddPopularCourseFragment : Fragment() {
         return binding.root
     }
 
-    private fun addDataToFirebase(courseName: String, courseDuration: String, courseFees: String) {
+    private fun addDataToFirebase(courseName: String) {
         val processDialog = ProgressDialog(context)
         processDialog.setMessage("Image Uploading")
         processDialog.setCancelable(false)
         processDialog.show()
 
-        val firebaseStorage = FirebaseStorage.getInstance().getReference("popularCourses")
-        val firebaseDatabase = FirebaseDatabase.getInstance().getReference("popularCourses")
+        val firebaseStorage = FirebaseStorage.getInstance().getReference("popularStreams")
+        val firebaseDatabase = FirebaseDatabase.getInstance().getReference("popularStreams")
 
         val storageRef = firebaseStorage.child(System.currentTimeMillis().toString()+"."+ getFileExtension(uri))
         storageRef.putFile(uri)
@@ -95,17 +95,17 @@ class AddPopularCourseFragment : Fragment() {
                 val courseModel = CourseModel(
                     firebaseDatabase!!.push().key,
                     downloadUrl.toString(),
-                    courseName,
-                    courseDuration,
-                    courseFees
+                    courseName
+                    /*courseDuration,
+                    courseFees*/
                 )
                 val uploadId = courseModel.courseId
 
                 firebaseDatabase!!.child(uploadId.toString()).setValue(courseModel)
 
                 binding.courseName.text = null
-                binding.courseDuration.text = null
-                binding.courseFees.text = null
+               /* binding.courseDuration.text = null
+                binding.courseFees.text = null*/
                 binding.btnImage.setImageBitmap(null)
             }
 

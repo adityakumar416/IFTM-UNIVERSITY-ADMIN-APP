@@ -43,6 +43,9 @@ private lateinit var binding: FragmentHomeBinding
         binding.viewAllQuiz.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_viewAllQuizFragment)
         }
+        binding.userComplaint.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_viewAllUserComplaintFragment)
+        }
 
         return binding.root
     }

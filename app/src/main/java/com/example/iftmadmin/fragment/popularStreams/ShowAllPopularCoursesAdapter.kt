@@ -1,4 +1,4 @@
-package com.example.iftmadmin.fragment.popularCourses
+package com.example.iftmadmin.fragment.popularStreams
 
 import android.content.Context
 import android.content.DialogInterface
@@ -11,7 +11,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.iftmadmin.R
-import com.example.iftmadmin.fragment.courses.CourseModel
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -22,7 +21,7 @@ import kotlin.Int
 import kotlin.toString
 
 class ShowAllPopularCoursesAdapter(
-    private val courseList: ArrayList<CourseModel>,
+    private val coursesStreamList: ArrayList<ShowAllPopularStreamsCourseModel>,
     private val context: Context?=null
 ): RecyclerView.Adapter<ShowAllPopularCoursesAdapter.ViewHolder>() {
 
@@ -30,8 +29,8 @@ class ShowAllPopularCoursesAdapter(
 
         val courseImage : ImageView = view.findViewById(R.id.course_image)
         val courseName : TextView = view.findViewById(R.id.course_name)
-        val courseDuration :TextView = view.findViewById(R.id.course_duration)
-        val courseFees : TextView = view.findViewById(R.id.course_fees)
+       /* val courseDuration :TextView = view.findViewById(R.id.course_duration)
+        val courseFees : TextView = view.findViewById(R.id.course_fees)*/
         val card : MaterialCardView = view.findViewById(R.id.materialCardView)
 
 
@@ -45,17 +44,17 @@ class ShowAllPopularCoursesAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-            val courseModel: CourseModel = courseList[position]
+            val popularStreamsCourseModel: ShowAllPopularStreamsCourseModel = coursesStreamList[position]
 
-            holder.courseName.setText("  "+courseModel.courseName)
-        holder.courseDuration.setText("  "+courseModel.courseDuration)
-        holder.courseFees.setText("  "+courseModel.courseFees)
+            holder.courseName.setText("  "+popularStreamsCourseModel.courseName)
+     /*   holder.courseDuration.setText("  "+courseModel.courseDuration)
+        holder.courseFees.setText("  "+courseModel.courseFees)*/
 
 
 
         Picasso
             .get()
-            .load(courseModel.courseImage)
+            .load(popularStreamsCourseModel.courseImage)
             .into(holder.courseImage)
 /*
             Glide
@@ -64,16 +63,16 @@ class ShowAllPopularCoursesAdapter(
             .into(holder.image)*/
 
         holder.card.setOnLongClickListener(OnLongClickListener {
-            showDialog(courseModel)
+            showDialog(popularStreamsCourseModel)
             true
         })
 
 
     }
 
-    private fun showDialog(courseModel: CourseModel) {
-        val firebaseStorage = FirebaseStorage.getInstance().getReference("popularCourses")
-        val databaseRef = FirebaseDatabase.getInstance().getReference("popularCourses")
+    private fun showDialog(popularStreamsCourseModel: ShowAllPopularStreamsCourseModel) {
+        val firebaseStorage = FirebaseStorage.getInstance().getReference("popularStreams")
+        val databaseRef = FirebaseDatabase.getInstance().getReference("popularStreams")
 
         if (context != null) {
             MaterialAlertDialogBuilder(context)
@@ -86,12 +85,12 @@ class ShowAllPopularCoursesAdapter(
                 })
                 .setPositiveButton("Yes",object : DialogInterface.OnClickListener{
                     override fun onClick(dialog: DialogInterface?, which: Int) {
-                        firebaseStorage.storage.getReferenceFromUrl(courseModel.courseImage!!).delete().addOnSuccessListener(object : OnSuccessListener<Void>{
+                        firebaseStorage.storage.getReferenceFromUrl(popularStreamsCourseModel.courseImage!!).delete().addOnSuccessListener(object : OnSuccessListener<Void>{
                             override fun onSuccess(p0: Void?) {
                                 Toast.makeText(context, "Course deleted", Toast.LENGTH_SHORT).show()
 
-                                databaseRef.child(courseModel.courseId.toString()).removeValue()
-                                courseList.remove(courseModel)
+                                databaseRef.child(popularStreamsCourseModel.courseId.toString()).removeValue()
+                                coursesStreamList.remove(popularStreamsCourseModel)
 
                             }
                         })
@@ -106,7 +105,7 @@ class ShowAllPopularCoursesAdapter(
 
     override fun getItemCount(): Int {
 
-            return courseList.size
+            return coursesStreamList.size
     }
 }
 
