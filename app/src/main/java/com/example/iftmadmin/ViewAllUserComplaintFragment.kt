@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.iftmadmin.databinding.FragmentViewAllCoursesBinding
+import com.example.iftmadmin.databinding.FragmentViewAllUserComplaintBinding
 import com.example.iftmadmin.fragment.popularStreams.ShowAllPopularCoursesAdapter
 import com.example.iftmadmin.fragment.popularStreams.ShowAllPopularStreamsCourseModel
 import com.google.firebase.database.DataSnapshot
@@ -20,7 +21,7 @@ import com.google.firebase.database.ValueEventListener
 
 
 class ViewAllUserComplaintFragment : Fragment() {
-    private lateinit var binding: FragmentViewAllCoursesBinding
+    private lateinit var binding: FragmentViewAllUserComplaintBinding
     private lateinit var complaintList: ArrayList<ShowAllComplaintModel>
 
     override fun onCreateView(
@@ -28,7 +29,7 @@ class ViewAllUserComplaintFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentViewAllCoursesBinding.inflate(layoutInflater, container, false)
+        binding = FragmentViewAllUserComplaintBinding.inflate(layoutInflater, container, false)
 
 
         binding.recyclerview.layoutManager = LinearLayoutManager(context)

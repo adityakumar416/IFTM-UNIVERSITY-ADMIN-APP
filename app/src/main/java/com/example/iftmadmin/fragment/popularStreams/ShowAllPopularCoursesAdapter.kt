@@ -37,7 +37,7 @@ class ShowAllPopularCoursesAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            val itemView = LayoutInflater.from(parent.context).inflate(R.layout.course_view_layout,parent,false)
+            val itemView = LayoutInflater.from(parent.context).inflate(R.layout.course_streams_view_layout,parent,false)
 
         return ViewHolder(itemView)
     }

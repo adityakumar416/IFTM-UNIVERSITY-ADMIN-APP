@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.iftmadmin.databinding.FragmentViewAllCoursesBinding
+import com.example.iftmadmin.databinding.FragmentViewAllPopularCoursesBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -18,7 +19,7 @@ import com.google.firebase.database.ValueEventListener
 
 
 class ViewAllPopularCoursesFragment : Fragment() {
-    private lateinit var binding: FragmentViewAllCoursesBinding
+    private lateinit var binding: FragmentViewAllPopularCoursesBinding
     private lateinit var streamCourseList: ArrayList<ShowAllPopularStreamsCourseModel>
 
     override fun onCreateView(
@@ -26,7 +27,7 @@ class ViewAllPopularCoursesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentViewAllCoursesBinding.inflate(layoutInflater, container, false)
+        binding = FragmentViewAllPopularCoursesBinding.inflate(layoutInflater, container, false)
 
 
         binding.recyclerview.layoutManager = LinearLayoutManager(context)

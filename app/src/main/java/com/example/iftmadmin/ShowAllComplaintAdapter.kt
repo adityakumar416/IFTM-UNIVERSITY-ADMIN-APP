@@ -66,6 +66,12 @@ class ShowAllComplaintAdapter(
             .load(imageModel.url)
             .into(holder.image)*/
 
+        holder.courseImage.setOnLongClickListener(OnLongClickListener {
+            showDialog(showAllComplaintCurrentUser)
+            true
+        })
+
+
         holder.card.setOnLongClickListener(OnLongClickListener {
             showDialog(showAllComplaintCurrentUser)
             true

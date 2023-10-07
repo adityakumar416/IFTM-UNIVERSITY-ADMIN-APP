@@ -60,7 +60,7 @@
                     android:id="@+id/course_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:maxLength="20" />
+                     />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,7 +82,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textWebEmailAddress"
-                        android:maxLength="40" />
+                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,7 +101,6 @@
                     android:id="@+id/course_fees"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:maxLength="400"
                     android:textAlignment="textStart" />
 
             </com.google.android.material.textfield.TextInputLayout>

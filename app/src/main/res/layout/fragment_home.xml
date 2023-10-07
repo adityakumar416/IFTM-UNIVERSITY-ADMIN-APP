@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -178,7 +177,7 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Add Popular Courses"
+                        android:text="Add Popular Streams"
                         android:textSize="15sp"
 
                         android:textStyle="bold" />
@@ -194,7 +193,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="Add Courses"
+                        android:text="Add Streams"
                         android:textColor="@android:color/darker_gray" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -226,7 +225,7 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="View All Popular Courses"
+                        android:text="View All Popular Streams"
                         android:textSize="15sp"
                         android:gravity="center"
                         android:textStyle="bold" />
@@ -242,7 +241,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="View All Courses And Remove"
+                        android:text="View All Streams And Remove"
                         android:textColor="@android:color/darker_gray" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -381,7 +380,8 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:padding="10dp"
-                        android:src="@drawable/admin" />
+                        android:backgroundTint="@color/Victoria"
+                        android:background="@drawable/quiz_icon" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
@@ -428,7 +428,8 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:padding="10dp"
-                        android:src="@drawable/admin" />
+                        android:backgroundTint="@color/Victoria"
+                        android:background="@drawable/quiz_icon" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
@@ -487,7 +488,8 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:padding="10dp"
-                        android:src="@drawable/admin" />
+                        android:backgroundTint="@color/red"
+                        android:background="@drawable/report_complaint" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"

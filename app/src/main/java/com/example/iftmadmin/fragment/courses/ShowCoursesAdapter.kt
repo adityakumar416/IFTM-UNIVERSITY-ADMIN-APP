@@ -37,7 +37,7 @@ class ShowCoursesAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            val itemView = LayoutInflater.from(parent.context).inflate(R.layout.course_view_layout,parent,false)
+            val itemView = LayoutInflater.from(parent.context).inflate(R.layout.course_view,parent,false)
 
         return ViewHolder(itemView)
     }
